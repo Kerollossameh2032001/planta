@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
-Future<dynamic> navigateTo({
+Future<dynamic> navigateAndReplaceTo({
   required BuildContext context,
   required Widget destination,
 }) {

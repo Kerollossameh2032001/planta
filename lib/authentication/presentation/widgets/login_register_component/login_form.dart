@@ -2,11 +2,11 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:planta/core/constants/app_constant_string.dart';
+import 'package:planta/core/global/components/navigate_to.dart';
 import 'package:planta/layout/presentation/screens/home_screen.dart';
 
 import '../../../../core/constants/app_color_constant.dart';
-import '../custom_button.dart';
-import '../navigate_to.dart';
+import '../../../../core/global/components/custom_button.dart';
 
 
 class LoginForm extends StatelessWidget {
@@ -98,7 +98,7 @@ class LoginForm extends StatelessWidget {
                         },
                         transitionDuration: const Duration(seconds: 1,milliseconds: 500),
                         pageBuilder: (context,animation,secondaryAnimation) {
-                          return ForgetPasswordScreen();
+                          return const ForgetPasswordScreen();
                         },
                     ),
                 );
@@ -114,7 +114,7 @@ class LoginForm extends StatelessWidget {
             child: CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  navigateTo(context: context, destination: HomeScreen());
+                  navigateTo(context: context, destination: const HomeScreen());
                 }
               },
               backgroundColor: AppColorConstant.appPrimaryColor,
@@ -131,6 +131,6 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

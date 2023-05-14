@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:planta/core/constants/app_constant_string.dart';
+import 'package:planta/core/global/components/navigate_to.dart';
 
 import '../../../../core/constants/app_color_constant.dart';
 import '../../screen/login_screen.dart';
-import '../navigate_to.dart';
 
 
 class RegisterHeader extends StatelessWidget {
@@ -13,7 +13,7 @@ class RegisterHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Text(AppConstantString.registerHeader,
+      child: Text(AppConstantString.registerAsFarmer,
           style: Theme.of(context).textTheme.bodyMedium),
     );
   }
@@ -29,7 +29,7 @@ class ConfirmThePrivacy extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Text(
-        "By Signing up, you agreed with our terms of services and privacy policy",
+        AppConstantString.confirmPrivacyText,
         style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20),
       ),
     );
@@ -48,7 +48,7 @@ class NavigateToLogin extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "Already have account? Log in",
+            AppConstantString.alreadyHaveAccount,
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 17),
           ),
           TextButton(
@@ -56,7 +56,7 @@ class NavigateToLogin extends StatelessWidget {
               navigateTo(context: context, destination: LoginScreen());
             },
             child: Text(
-              'Login',
+              AppConstantString.loginHeader,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!

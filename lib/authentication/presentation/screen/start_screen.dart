@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:planta/core/global/components/navigate_and_replace.dart';
 
 import '../../../core/constants/app_constant_assets_url.dart';
 import '../../../core/constants/app_constant_string.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/logo_layout.dart';
-import '../widgets/navigate_to.dart';
-import 'login_screen.dart';
+import '../../../core/global/components/custom_button.dart';
+import '../../../core/global/components/logo_layout.dart';
+import '../../../core/global/components/navigate_to.dart';
 import 'onboarding_screen.dart';
 
 class StartScreen extends StatelessWidget {
@@ -29,31 +29,33 @@ class StartScreen extends StatelessWidget {
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.3),
             const SizedBox(
-              height: 150,
+              height: 200,
               width: 150,
-              child:  LogoLayout(),
+              child: LogoLayout(),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             Text(
               AppConstantString.startWelcomeMessage,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             Text(
               AppConstantString.startDescription,
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            const SizedBox(height: 100,),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.08),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: CustomButton(
                 backgroundColor: Theme.of(context).primaryColor,
-                onPressed: () => navigateTo(
+                onPressed: () => navigateAndReplaceTo(
                   context: context,
-                  destination: OnBoardingScreen(),
+                  destination: const OnBoardingScreen(),
                 ),
-                child: Text("Get Started",
-                    style: Theme.of(context).textTheme.labelMedium),
+                child: Text(
+                  AppConstantString.getStartedButton,
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
             )
           ],

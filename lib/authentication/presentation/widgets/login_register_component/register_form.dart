@@ -1,13 +1,12 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:planta/authentication/presentation/widgets/login_register_component/register_headers.dart';
-import 'package:planta/authentication/presentation/widgets/navigate_to.dart';
+import 'package:planta/authentication/presentation/widgets/login_register_component/social_auth_button.dart';
 import 'package:planta/layout/presentation/screens/home_screen.dart';
 
 import '../../../../core/constants/app_color_constant.dart';
 import '../../../../core/constants/app_constant_string.dart';
-import '../custom_button.dart';
+import '../../../../core/global/components/custom_button.dart';
+import '../../../../core/global/components/navigate_to.dart';
 
 class RegisterForm extends StatelessWidget {
   final TextEditingController nameController;
@@ -39,13 +38,19 @@ class RegisterForm extends StatelessWidget {
               cursorColor: AppColorConstant.appPrimaryColor,
               autocorrect: true,
               decoration: InputDecoration(
-                hintText:AppConstantString.nameHintText,
-                hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 18,color: Colors.grey),
+                hintText: AppConstantString.nameHintText,
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontSize: 18, color: Colors.grey),
                 alignLabelWithHint: true,
                 labelText: AppConstantString.nameLabelText,
                 labelStyle: Theme.of(context).textTheme.bodyMedium,
               ),
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontSize: 20,color: Colors.grey),
               validator: (value) {
                 if (value!.isEmpty) {
                   return "Name can't be empty";
@@ -63,14 +68,19 @@ class RegisterForm extends StatelessWidget {
               autocorrect: true,
               decoration: InputDecoration(
                 hintText: AppConstantString.emailHintText,
-                hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 18,color: Colors.grey),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontSize: 18, color: Colors.grey),
                 alignLabelWithHint: true,
                 labelText: AppConstantString.emailLabelText,
                 labelStyle: Theme.of(context).textTheme.bodyMedium,
               ),
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontSize: 20,color: Colors.grey),
               validator: (value) {
-
                 if (value!.isEmpty) {
                   return "E_mail can't be empty";
                 } else {
@@ -87,12 +97,18 @@ class RegisterForm extends StatelessWidget {
               autocorrect: true,
               decoration: InputDecoration(
                 hintText: AppConstantString.phoneHintText,
-                hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 18,color: Colors.grey),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontSize: 18, color: Colors.grey),
                 alignLabelWithHint: true,
                 labelText: AppConstantString.phoneLabelText,
                 labelStyle: Theme.of(context).textTheme.bodyMedium,
               ),
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontSize: 20,color: Colors.grey),
               validator: (value) {
                 if (value!.isEmpty) {
                   return "phone can't be empty";
@@ -112,22 +128,26 @@ class RegisterForm extends StatelessWidget {
               cursorColor: AppColorConstant.appPrimaryColor,
               decoration: InputDecoration(
                   hintText: AppConstantString.passwordHintText,
-                  hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 18,color: Colors.grey),
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(fontSize: 18, color: Colors.grey),
                   alignLabelWithHint: true,
                   labelText: AppConstantString.passwordLabelText,
                   labelStyle: Theme.of(context).textTheme.bodyMedium,
                   suffixIcon: IconButton(
-                    icon:  Icon(Icons.visibility),
-                    onPressed: () {
-                    },
+                    icon: const Icon(Icons.visibility),
+                    onPressed: () {},
                   )),
               keyboardType: TextInputType.text,
               obscureText: true,
-              style: Theme.of(context).textTheme.bodyMedium,
-              validator: (value){
-                if(value!.length < 6){
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontSize: 20,color: Colors.grey),              validator: (value) {
+                if (value!.length < 6) {
                   return "Weak password";
-                }else{
+                } else {
                   return null;
                 }
               },
@@ -138,12 +158,20 @@ class RegisterForm extends StatelessWidget {
             child: CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  navigateTo(context: context, destination: HomeScreen());
+                  navigateTo(context: context, destination: const HomeScreen());
                 }
               },
               backgroundColor: AppColorConstant.appPrimaryColor,
-              child: const Text("Sign up",style: TextStyle(fontSize: 20),),
+              child: const Text(
+                AppConstantString.registerHeader,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
+          ),
+          SocialAuthButtons(
+            googleAuth: () {
+              navigateTo(context: context, destination: const HomeScreen());
+            },
           ),
           const ConfirmThePrivacy(),
           const NavigateToLogin()

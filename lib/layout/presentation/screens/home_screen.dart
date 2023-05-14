@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:planta/layout/presentation/screens/result_screen.dart';
 
-import '../../../authentication/presentation/widgets/navigate_to.dart';
+import '../../../core/global/components/navigate_to.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

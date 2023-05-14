@@ -1,14 +1,12 @@
-
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:planta/authentication/presentation/screen/start_screen.dart';
-
+import 'package:planta/core/global/components/navigate_and_replace.dart';
+import 'package:planta/core/global/components/navigate_to.dart';
 import '../../../core/constants/app_constant_assets_url.dart';
 import '../../../core/constants/app_constant_string.dart';
-import '../widgets/logo_layout.dart';
-import '../widgets/navigate_to.dart';
+import '../../../core/global/components/logo_layout.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -23,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(
       const Duration(seconds: 3),
-      () => navigateTo(destination: const StartScreen(),context: context),
+      () => navigateAndReplaceTo(destination: const StartScreen(),context: context),
     );
     super.initState();
   }
@@ -38,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         width: double.infinity,
         decoration:  BoxDecoration(
             color: Theme.of(context).primaryColor,
-            image: DecorationImage(
+            image: const DecorationImage(
             image: AssetImage(AppConstantAssetsUrl.backgroundImage),
                 fit: BoxFit.cover
           )

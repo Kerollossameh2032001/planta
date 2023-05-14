@@ -1,6 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:planta/authentication/presentation/widgets/navigate_to.dart';
+import 'package:planta/core/global/components/navigate_to.dart';
 import 'package:planta/layout/presentation/screens/home_screen.dart';
 
 import '../../../core/constants/app_constant_string.dart';
@@ -29,8 +29,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     SocialAuthButtons(
-                        facebookAuth: () {
-                        },
+
                         googleAuth: () {
                           navigateTo(context: context, destination: HomeScreen());
                         }),

@@ -7,7 +7,7 @@ import '../../constants/app_constant_colors.dart';
 import '../../constants/app_size_costant.dart';
 
 ThemeData getLightTheme = ThemeData(
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark
@@ -42,6 +42,7 @@ ThemeData getLightTheme = ThemeData(
       fontSize: AppSizeConstant.labelMediumFontSize,
     ),
   ),
+
   inputDecorationTheme: InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(15),

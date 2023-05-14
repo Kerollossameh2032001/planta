@@ -1,20 +1,20 @@
-
 import 'dart:async';
-
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:planta/authentication/presentation/screen/privacy_screen.dart';
 import 'package:planta/authentication/presentation/screen/register_screen.dart';
-import 'package:planta/core/constants/app_constant_colors.dart';
-
+import 'package:planta/core/constants/app_constant_string.dart';
+import 'package:planta/core/global/components/navigate_and_replace.dart';
+import 'package:planta/core/global/components/navigate_to.dart';
 import '../../../core/constants/app_color_constant.dart';
-import '../widgets/custom_button.dart';
+import '../../../core/global/components/custom_button.dart';
 import '../widgets/onboarding_components/build_page_item.dart';
 import '../widgets/onboarding_components/indicator.dart';
 import '../widgets/onboarding_components/onboaring_model.dart';
 import 'login_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
-  OnBoardingScreen({Key? key}) : super(key: key);
+  const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
@@ -26,7 +26,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   void initState() {
-
     Timer.periodic(const Duration(seconds: 2), (timer) {
       if (currentIndex < 2) {
         currentIndex++;
@@ -50,10 +49,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 allowImplicitScrolling: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: pageData.length,
-                onPageChanged: (int val) =>
-                    setState(() {
-                      currentIndex = val;
-                    }),
+                onPageChanged: (int val) => setState(() {
+                  currentIndex = val;
+                }),
                 itemBuilder: (context, index) {
                   return BuildPageItem(model: pageData[index]);
                 },
@@ -68,54 +66,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               child: CustomButton(
                 backgroundColor: Theme.of(context).primaryColor,
                 onPressed: () {
-                  Navigator.of(context).push(
-                    PageRouteBuilder(
-                      transitionsBuilder: (context,animation,secondaryAnimation,child){
-                        //timeDilation = 2;
-                        return SharedAxisTransition(
-                          transitionType: SharedAxisTransitionType.scaled,
-                          secondaryAnimation: secondaryAnimation,
-                          animation: animation,
-                          fillColor: AppColorConstant.secondaryAppPrimaryDarkColor,
-                          child: child,
-                        );
-                      },
-                      transitionDuration: const Duration(seconds: 1,milliseconds: 500),
-                      pageBuilder: (context,animation,secondaryAnimation) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
+                  navigateTo(context: context, destination: LoginScreen());
                 },
-                child: const Text('Login in'),
+                child: Text(
+                  AppConstantString.loginHeader,
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
             ),
             Padding(
               padding:
-              const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+                  const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
               child: CustomButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    PageRouteBuilder(
-                      transitionsBuilder: (context,animation,secondaryAnimation,child){
-                        //timeDilation = 2.0;
-                        return SharedAxisTransition(
-                          transitionType: SharedAxisTransitionType.scaled,
-                          secondaryAnimation: secondaryAnimation,
-                          animation: animation,
-                          fillColor: AppColorConstant.secondaryAppPrimaryDarkColor,
-                          child: child,
-                        );
-                      },
-                      transitionDuration: const Duration(seconds: 1,milliseconds: 500),
-                      pageBuilder: (context,animation,secondaryAnimation) {
-                        return RegisterScreen();
-                      },
-                    ),
-                  );
+                  navigateTo(context: context, destination: const PrivacyScreen());
                 },
                 backgroundColor: AppColorConstant.secondaryAppPrimaryDarkColor,
-                child: Text('Create Account'),
+                child: Text(
+                  AppConstantString.registerHeader,
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
             ),
           ],
