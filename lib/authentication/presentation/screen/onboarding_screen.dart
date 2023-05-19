@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:planta/authentication/presentation/screen/privacy_screen.dart';
-import 'package:planta/authentication/presentation/screen/register_screen.dart';
+import 'package:planta/authentication/presentation/screen/register_as_farmer_screen.dart';
 import 'package:planta/core/constants/app_constant_string.dart';
 import 'package:planta/core/global/components/navigate_and_replace.dart';
 import 'package:planta/core/global/components/navigate_to.dart';
@@ -61,8 +62,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
             Indicator(pageController: pageController),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 20.0, left: 20.0, right: 20.0, bottom: 15.0),
+              padding:  EdgeInsets.only(
+                  top: 20.h, left: 40.0.w, right: 40.0.w, bottom: 15.0.h),
               child: CustomButton(
                 backgroundColor: Theme.of(context).primaryColor,
                 onPressed: () {
@@ -76,7 +77,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+                   EdgeInsets.only( left: 40.0.w, right: 40.0.w, bottom: 20.0.h),
               child: CustomButton(
                 onPressed: () {
                   navigateTo(context: context, destination: const PrivacyScreen());

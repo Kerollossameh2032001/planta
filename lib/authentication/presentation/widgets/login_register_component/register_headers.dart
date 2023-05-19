@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:planta/core/constants/app_constant_string.dart';
 import 'package:planta/core/global/components/navigate_to.dart';
 
@@ -27,10 +28,10 @@ class ConfirmThePrivacy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      padding: EdgeInsets.symmetric(horizontal: 25.0.h),
       child: Text(
         AppConstantString.confirmPrivacyText,
-        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20),
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20.sp),
       ),
     );
   }
@@ -44,12 +45,12 @@ class NavigateToLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 5),
+      padding:  EdgeInsets.symmetric(horizontal: 25.0.w, vertical: 5.h),
       child: Row(
         children: [
           Text(
             AppConstantString.alreadyHaveAccount,
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 17),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 17.sp),
           ),
           TextButton(
             onPressed: () {
@@ -60,7 +61,7 @@ class NavigateToLogin extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!
-                  .copyWith(color: AppColorConstant.appPrimaryColor,fontSize: 18),
+                  .copyWith(color: Theme.of(context).primaryColor,fontSize: 18.sp),
             ),
           )
         ],

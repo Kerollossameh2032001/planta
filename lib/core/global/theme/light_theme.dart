@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constants/app_constant_colors.dart';
 import '../../constants/app_size_costant.dart';
@@ -15,31 +16,31 @@ ThemeData getLightTheme = ThemeData(
     elevation: 0.0,
   ),
   primaryColor: AppConstantColor.primaryColor,
-  textTheme: const TextTheme(
+  textTheme:  TextTheme(
     titleLarge: TextStyle(
       color: AppConstantColor.titleLargeColor,
-      fontSize: AppSizeConstant.titleLargeFontSize,
+      fontSize: AppSizeConstant.titleLargeFontSize.sp,
     ),
     titleSmall: TextStyle(
-      letterSpacing: AppSizeConstant.titleSmallSpacingLetter,
+      letterSpacing: AppSizeConstant.titleSmallSpacingLetter.sp,
       color: AppConstantColor.titleLargeColor,
-      height: AppSizeConstant.titleSmallHeight,
+      height: AppSizeConstant.titleSmallHeight.h,
     ),
     bodyLarge: TextStyle(
       color: AppConstantColor.titleLargeColor,
-      fontSize: AppSizeConstant.bodyLargeFontSize,
+      fontSize: AppSizeConstant.bodyLargeFontSize.sp,
     ),
     bodySmall: TextStyle(
-        fontSize: AppSizeConstant.bodySmallFontSize,
-        color: Color.fromRGBO(196, 175, 159, 1)),
+        fontSize: AppSizeConstant.bodySmallFontSize.sp,
+        color: const Color.fromRGBO(196, 175, 159, 1)),
     bodyMedium: TextStyle(
       color: AppConstantColor.bodyMediumColor,
       fontWeight: FontWeight.bold,
-      fontSize: AppSizeConstant.bodyMediumFontSize,
+      fontSize: AppSizeConstant.bodyMediumFontSize.sp,
     ),
     labelMedium: TextStyle(
       color: AppConstantColor.labelMediumColor,
-      fontSize: AppSizeConstant.labelMediumFontSize,
+      fontSize: AppSizeConstant.labelMediumFontSize.sp,
     ),
   ),
 
@@ -48,14 +49,14 @@ ThemeData getLightTheme = ThemeData(
       borderRadius: BorderRadius.circular(15),
       borderSide: BorderSide.none,
     ),
-    contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+    contentPadding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
     filled: true,
     fillColor: AppConstantColor.secondaryPrimaryColor,
-    floatingLabelStyle: const TextStyle(
+    floatingLabelStyle: TextStyle(
       color: AppConstantColor.primaryColor,
-      height: 0,
+      height: 0.h,
       fontWeight: FontWeight.bold,
-      fontSize: 20,
+      fontSize: 20.sp,
     ),
     focusColor: AppConstantColor.primaryColor,
     prefixIconColor: AppConstantColor.primaryColor,

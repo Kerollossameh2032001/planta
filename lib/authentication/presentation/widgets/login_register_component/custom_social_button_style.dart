@@ -20,7 +20,7 @@ class CustomSocialButton extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         height: 50,
-        width: MediaQuery.of(context).size.width*0.8638,
+        width: MediaQuery.of(context).size.width*0.8938,
         child: ElevatedButton(
           onPressed: onPressed,
           style: ButtonStyle(

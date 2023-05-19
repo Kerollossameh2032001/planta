@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/login_register_component/register_form.dart';
 import '../widgets/login_register_component/register_headers.dart';
 
@@ -17,21 +18,16 @@ class RegisterAsFarmerScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 15),
             const RegisterHeader(),
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    RegisterForm(
-                      nameController: nameController,
-                      emailController: emailController,
-                      passwordController: passwordController,
-                      phoneController: phoneController,
-                      formKey: GlobalKey<FormState>(),
-                    ),
-                  ],
+                child: RegisterForm(
+                  nameController: nameController,
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  phoneController: phoneController,
+                  formKey: GlobalKey<FormState>(),
                 ),
               ),
             ),

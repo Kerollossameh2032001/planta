@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:planta/core/constants/app_constant_colors.dart';
 
 import 'onboaring_model.dart';
@@ -17,10 +18,10 @@ class BuildPageItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 25.0),
+          padding:  EdgeInsets.only(top: 25.0.h,left: 30.w),
           child: Container(
-            height: 350,
-            width: 350,
+            height: MediaQuery.of(context).size.height*0.4,
+            width: MediaQuery.of(context).size.height*0.4,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(model.image),
@@ -29,20 +30,20 @@ class BuildPageItem extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 18.0),
+          padding:  EdgeInsets.only(left: 30.0.w,right: 12.0.w),
           child: Text(model.title, style: Theme
               .of(context)
               .textTheme
-              .titleLarge!.copyWith(color: AppConstantColor.primaryColor,fontSize: 30),
+              .titleLarge!.copyWith(color: AppConstantColor.primaryColor,fontSize: 30.sp),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          padding: EdgeInsets.symmetric(horizontal: 30.0.w),
           child: Text(model.subTitle,
               style: Theme
                   .of(context)
                   .textTheme
-                  .bodyMedium!.copyWith(fontSize: 15),
+                  .bodyMedium!.copyWith(fontSize: 15.sp),
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:planta/authentication/presentation/widgets/login_register_component/register_headers.dart';
 import 'package:planta/authentication/presentation/widgets/login_register_component/social_auth_button.dart';
 import 'package:planta/layout/presentation/screens/home_screen.dart';
@@ -154,7 +155,7 @@ class RegisterForm extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.h),
             child: CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
@@ -168,10 +169,13 @@ class RegisterForm extends StatelessWidget {
               ),
             ),
           ),
-          SocialAuthButtons(
-            googleAuth: () {
-              navigateTo(context: context, destination: const HomeScreen());
-            },
+          Padding(
+            padding: EdgeInsets.only(right: 5.0.w,left: 10.0.w, top: 5.h,bottom: 5.h),
+            child: SocialAuthButtons(
+              googleAuth: () {
+                navigateTo(context: context, destination: const HomeScreen());
+              },
+            ),
           ),
           const ConfirmThePrivacy(),
           const NavigateToLogin()

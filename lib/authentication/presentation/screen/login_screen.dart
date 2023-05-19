@@ -1,4 +1,3 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:planta/core/global/components/navigate_to.dart';
 import 'package:planta/layout/presentation/screens/home_screen.dart';

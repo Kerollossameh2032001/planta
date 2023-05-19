@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:planta/core/global/components/navigate_and_replace.dart';
 
 import '../../../core/constants/app_constant_assets_url.dart';
@@ -28,10 +29,10 @@ class StartScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.3),
-            const SizedBox(
-              height: 200,
-              width: 150,
-              child: LogoLayout(),
+            SizedBox(
+              height: 200.h,
+              width: 150.w,
+              child: const LogoLayout(),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             Text(
@@ -43,9 +44,9 @@ class StartScreen extends StatelessWidget {
               AppConstantString.startDescription,
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.08),
+            SizedBox(height: 25.h),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.only(bottom: 70.0.h,left: 40.0.w,right: 40.0.w,top: 10.h),
               child: CustomButton(
                 backgroundColor: Theme.of(context).primaryColor,
                 onPressed: () => navigateAndReplaceTo(

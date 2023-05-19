@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/constants/app_color_constant.dart';
@@ -17,11 +18,11 @@ class Indicator extends StatelessWidget {
     return SmoothPageIndicator(
       controller: pageController,
       count: pageData.length,
-      effect: const WormEffect(
+      effect:  WormEffect(
         activeDotColor: AppColorConstant.appPrimaryColor,
         dotColor: AppColorConstant.secondaryAppPrimaryDarkColor,
-        dotHeight: 10,
-        dotWidth: 10,
+        dotHeight: 10.h,
+        dotWidth: 10.w,
       ),
       axisDirection: Axis.horizontal,
     );
