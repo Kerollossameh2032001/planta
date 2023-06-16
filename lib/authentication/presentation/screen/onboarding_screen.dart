@@ -62,7 +62,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
             Indicator(pageController: pageController),
             Padding(
-              padding:  EdgeInsets.only(
+              padding: EdgeInsets.only(
                   top: 20.h, left: 40.0.w, right: 40.0.w, bottom: 15.0.h),
               child: CustomButton(
                 backgroundColor: Theme.of(context).primaryColor,
@@ -77,10 +77,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
             Padding(
               padding:
-                   EdgeInsets.only( left: 40.0.w, right: 40.0.w, bottom: 20.0.h),
+                  EdgeInsets.only(left: 40.0.w, right: 40.0.w, bottom: 20.0.h),
               child: CustomButton(
                 onPressed: () {
-                  navigateTo(context: context, destination: const PrivacyScreen());
+                  navigateTo(
+                      context: context, destination: const PrivacyScreen());
                 },
                 backgroundColor: AppColorConstant.secondaryAppPrimaryDarkColor,
                 child: Text(

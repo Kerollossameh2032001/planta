@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,13 +8,11 @@ import '../../constants/app_size_costant.dart';
 ThemeData getLightTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark
-    ),
+        statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark),
     elevation: 0.0,
   ),
   primaryColor: AppConstantColor.primaryColor,
-  textTheme:  TextTheme(
+  textTheme: TextTheme(
     titleLarge: TextStyle(
       color: AppConstantColor.titleLargeColor,
       fontSize: AppSizeConstant.titleLargeFontSize.sp,
@@ -31,8 +27,11 @@ ThemeData getLightTheme = ThemeData(
       fontSize: AppSizeConstant.bodyLargeFontSize.sp,
     ),
     bodySmall: TextStyle(
-        fontSize: AppSizeConstant.bodySmallFontSize.sp,
-        color: const Color.fromRGBO(196, 175, 159, 1)),
+      fontSize: AppSizeConstant.bodySmallFontSize.sp,
+      //color: const Color.fromRGBO(196, 175, 159, 1),
+      color: Colors.black45,
+      fontWeight: FontWeight.w500,
+    ),
     bodyMedium: TextStyle(
       color: AppConstantColor.bodyMediumColor,
       fontWeight: FontWeight.bold,
@@ -43,7 +42,6 @@ ThemeData getLightTheme = ThemeData(
       fontSize: AppSizeConstant.labelMediumFontSize.sp,
     ),
   ),
-
   inputDecorationTheme: InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(15),

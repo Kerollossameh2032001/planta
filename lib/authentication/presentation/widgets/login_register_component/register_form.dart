@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:planta/authentication/presentation/widgets/login_register_component/register_headers.dart';
 import 'package:planta/authentication/presentation/widgets/login_register_component/social_auth_button.dart';
-import 'package:planta/layout/presentation/screens/home_screen.dart';
+import 'package:planta/layout/presentation/screens/layout_screen.dart';
 
 import '../../../../core/constants/app_color_constant.dart';
 import '../../../../core/constants/app_constant_string.dart';
@@ -159,7 +159,7 @@ class RegisterForm extends StatelessWidget {
             child: CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  navigateTo(context: context, destination: const HomeScreen());
+                  navigateTo(context: context, destination:  LayoutScreen());
                 }
               },
               backgroundColor: AppColorConstant.appPrimaryColor,
@@ -170,10 +170,18 @@ class RegisterForm extends StatelessWidget {
             ),
           ),
           Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: 100, vertical: 20),
+            child: Text(
+              AppConstantString.registerBody,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ),
+          Padding(
             padding: EdgeInsets.only(right: 5.0.w,left: 10.0.w, top: 5.h,bottom: 5.h),
             child: SocialAuthButtons(
               googleAuth: () {
-                navigateTo(context: context, destination: const HomeScreen());
+                navigateTo(context: context, destination:  LayoutScreen());
               },
             ),
           ),

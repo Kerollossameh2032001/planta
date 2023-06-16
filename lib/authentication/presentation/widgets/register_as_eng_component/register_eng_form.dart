@@ -8,7 +8,7 @@ import '../../../../core/constants/app_constant_colors.dart';
 import '../../../../core/constants/app_constant_string.dart';
 import '../../../../core/global/components/custom_button.dart';
 import '../../../../core/global/components/navigate_to.dart';
-import '../../../../layout/presentation/screens/home_screen.dart';
+import '../../../../layout/presentation/screens/layout_screen.dart';
 import '../../controller/register_cubit/register_cubit.dart';
 import '../../controller/register_cubit/register_state.dart';
 import '../login_register_component/register_headers.dart';
@@ -213,7 +213,7 @@ class RegisterEngForm extends StatelessWidget {
             child: CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  navigateTo(context: context, destination: const HomeScreen());
+                  navigateTo(context: context, destination: LayoutScreen());
                 }
               },
               backgroundColor: AppColorConstant.appPrimaryColor,

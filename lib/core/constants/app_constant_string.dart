@@ -5,7 +5,9 @@ class AppConstantString {
   static const String startWelcomeMessage = 'Welcome to Planta';
   static const String getStartedButton = "Get Started";
   static const String loginHeader = 'Login';
-  static const String loginBody = 'Or log in with Email';
+  static const String loginButton = 'Login';
+  static const String loginBody = 'Or log in with Google';
+  static const String registerBody = 'Or Sign up with Google';
   static const String registerHeader = 'Sign up';
   static const String privacyButton = 'Privacy of Service';
   static const String registerAsFarmer = 'Sign up as a Farmer';
@@ -34,9 +36,9 @@ class AppConstantString {
   static const String uploadResumeLabelText = 'Upload Resume';
   static const String uploadResumeTextButton = 'Choose File';
 
-  static const String forgetPasswordHeader = "Forgot Your Password?";
-  static const String forgetPasswordSubHeader =
-      "Enter your email to receive an email to reset password";
+  static const String forgetPasswordHeader = "Forgot Your Password..?!";
+  static const String forgetPasswordSubHeader = "Enter your email to receive an email to reset password";
+  static const String forgetPasswordButton = 'Send';
 }
 
 class PrivacyParagraph {
